@@ -6,6 +6,6 @@ Allows detection of reversals from a tracking file of the bacteria and extractio
    ```bash
    git clone https://github.com/MignotLab/reversals_detection_from_trajectories.git
 
-## Utilisation
+## Usage
 Open parameters.py, enter the path where the adapted CSV files are saved.
 Open then main.py and launch the cells with Ctrl+Enter.

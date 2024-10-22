@@ -6,5 +6,5 @@ We extract the eigenvalues of both the age-structured and phase-structured model
    ```bash
    git clone https://github.com/MignotLab/linearisation_model_1d.git
 
-## Utilisation
+## Usage
 Open the main.py (in both model type) file and launch all cells.

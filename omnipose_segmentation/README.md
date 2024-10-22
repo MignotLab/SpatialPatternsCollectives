@@ -6,5 +6,5 @@ Use the Omnipose algorithm in Python for segmentation.
    ```bash
    git clone https://github.com/MignotLab/run_omnipose.git
 
-## Utilisation
+## Usage
 Open run_omnipose.py, enter the path where the adapted nd2 files are saved.

@@ -7,5 +7,5 @@ The algorithm simulate the bacteria Myxococcus xanthus shape as a succession of 
    ```bash
    git clone https://github.com/MignotLab/simulations_2d.git
 
-## Utilisation
+## Usage
 Open launcher.py, and launch the cells to start simulations of rippling and swarming.

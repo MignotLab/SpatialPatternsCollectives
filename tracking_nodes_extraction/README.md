@@ -6,6 +6,6 @@ Starts with a tracking file built using Trackmate on FIJI and allows the extract
    ```bash
    git clone https://github.com/MignotLab/tracking_nodes_extraction.git
 
-## Utilisation
+## Usage
 Open parameters.py, enter the path where the adapted csv files are saved.
 Open main.py and run the cells.

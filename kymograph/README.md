@@ -6,5 +6,5 @@ We first extracted the position of the bacteria within a specific region defined
    ```bash
    git clone https://github.com/MignotLab/kymograph.git
 
-## Utilisation
+## Usage
 Open the kymograph.py file, enter the path where the adapted CSV and PNG files are saved, and launch it with Ctrl+Enter.

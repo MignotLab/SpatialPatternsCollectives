@@ -6,5 +6,5 @@ We extracted the orientation of the bacteria from a tracking file that detected 
    ```bash
    git clone https://github.com/MignotLab/nematic_order.git
 
-## Utilisation
+## Usage
 Open the launcher.py file, enter the path where the adapted CSV files are saved, and launch it with Ctrl+Enter.

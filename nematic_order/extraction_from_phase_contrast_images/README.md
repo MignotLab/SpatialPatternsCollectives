@@ -6,5 +6,5 @@ We extracted the mean orientation of the bacteria on a grid in the phase contras
    ```bash
    git clone https://github.com/MignotLab/nematic_order.git
 
-## Utilisation
+## Usage
 Open the extract_nematic_from_phase_contrast.py file, enter the path where the adapted CSV files are saved, and launch it with Ctrl+Enter.
