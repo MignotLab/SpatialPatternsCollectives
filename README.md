@@ -1,71 +1,75 @@
 # The mechanisms of spatial pattern transition in motile bacterial collectives
 
-This repository contains the main analysis and simulation codes used in the paper  
-**"The mechanisms of spatial pattern transition in motile bacterial collectives"**.
+This repository provides the analysis and simulation codes used in the paper:  
+**"The mechanisms of spatial pattern transition in motile bacterial collectives" (2025)**
 
-## Folder: `scripts/`
+All codes are implemented as *pseudo-notebooks*: each code cell can be executed independently (e.g. in VS Code or Spyder using `Ctrl + Enter`).
 
-### **`nematic_analysis.py`**
-This script extracts the **nematic order** from phase-contrast or fluorescent movies by dividing each frame into a grid.
+---
 
-- Computes local nematic alignment in each grid bin.
-- Correlates nematic order between bins separated by distance *r*.
-- The function `plot_nematic()` plots nematic order as a function of distance *r*.
+## 1. Repository structure
 
-**Used in:** Main Figures **1c**, **5b**, and Supplementary Figure **S2c**.
+All scripts are located in the `scripts/` folder, including the subdirectories used for specific analyses or simulations.
 
-### **`reversal_and_signaling_analysis.py`**
-Detects **cell reversals** from CSV tracking data and computes local signaling features:
+### Main analysis scripts
 
-- `reversals`: binary flag (1 = reversal at that frame).
-- `cumul_frustration`: cumulative local frustration.
-- `n_neighbours`: local density.
-- `n_neg_neighbours`: directional (nematic) density.
+- **`nematic_analysis.py`**  
+  Extracts the *nematic order* from phase-contrast or fluorescence movies by dividing each frame into a grid.  
+  Computes spatial correlations of nematic alignment and plots nematic order as a function of distance *r*.  
+  *Used in Figures 1c, 5b, and Supplementary Figure S2c.*
 
-**Used in:** Main Figures **1e**, **1f**, **3b**, **3c**, **3d**, and **3e**.
+- **`reversal_and_signaling_analysis.py`**  
+  Detects reversal events from tracked bacteria (CSV format) and computes signaling-related quantities:  
+  `reversals`, `cumul_frustration`, `n_neighbours`, and `n_neg_neighbours`.  
+  *Used in Figures 1e, 1f, 3b–e.*
 
-### **`simulation_1d_main_model.py`**
-Runs the **1D simulation** model of the paper.
+- **`tracking_analysis.py`**  
+  Performs segmentation, skeletonization, and tracking of rod-shaped bacteria (e.g. *Myxococcus xanthus*).  
+  Generates tracking CSVs for input to `reversal_and_signaling_analysis.py`.  
+  Includes optional Napari visualization.
 
-- Generates spatial pattern transition dynamics in one dimension.
-- **Main output:** Figure **2c**.  
-  Figure **2d** was generated from  
-  `simulation/pde_model/linearisation/guzzo_model/main.py`.
+- **`simulation_1d_cpu.py` / `simulation_1d_cupy.py`**  
+  Implements the 1D simulation model presented in the paper.  
+  `simulation_1d_cpu.py` runs on any machine (CPU only).  
+  `simulation_1d_cupy.py` enables GPU acceleration using CuPy (see below).  
+  *Used in Figure 2c.*  
+  (Figure 2d was generated from `simulation/pde_model/linearisation/guzzo_model/main.py`.)
 
-### **`tracking_analysis.py`**
-Detects and extracts **cell skeletons** from segmented images, tracks bacterial cells, and generates CSV tracking data for use in `reversal_and_signaling_analysis.py`.
+### Subdirectories within `scripts/`
 
-- Visualization supported through **Napari**.
-- Works best for **rod-shaped** bacteria such as *Myxococcus xanthus*.
+- **`scripts/analysis_reversals_detection_SgmX/`**  
+  Supplementary analyses corresponding to Section 2.2 of the Supplementary Information.
 
-### `analysis_reversals_detection_SgmX/`
-Contains analysis codes used for **Section 2.2** of the Supplementary Information.
+- **`scripts/simu_2d/`**  
+  Codes for 2D agent-based simulations of swarming and rippling patterns.  
+  The main script `agent_based_simulation_script_paper_2024.py` was used for Figures 5–7.
 
-### `simu_2d/`
-Scripts for running **2D agent-based simulations** in parallel for both swarming and rippling behaviors.
+---
 
-- Main script: `agent_based_simulation_script_paper_2024.py`
-- **Used in:** Main Figures **5**, **6**, and **7**.
+## 2. Environment installation
 
-## Usage
-All scripts are written as *pseudo-notebooks*: each code cell can be executed independently using `Ctrl + Enter`.
+All analyses and simulations can be executed within a single Python environment.  
+The easiest setup method uses [`uv`](https://github.com/astral-sh/uv), a modern, fast Python package manager fully compatible with `pip`.
 
-### Create and activate the environment
+### Installation using `uv` (recommended)
 ```bash
+# Create and activate a local environment
 uv venv .venv
 source .venv/bin/activate      # Linux/macOS
 # or
-.venv\Scripts\Activate.ps1     # Windows
+.venv\Scripts\Activate.ps1     # Windows PowerShell
 
+# Install all required dependencies
 uv pip install -r requirements.txt
 ```
+This environment includes all dependencies required to execute every script in the repository.
 
 ### Optional: GPU acceleration (CuPy)
 
-Some 1D simulations use GPU acceleration via **CuPy**.
+Some simulations (e.g., `simulation_1d_cupy.py`) use GPU acceleration through **CuPy**.
 
-**Linux/Windows + NVIDIA (CUDA available)**  
-Install the CUDA-specific CuPy wheel:
-```bash
+
+**Linux / Windows (NVIDIA GPU)**
+``` bash
 uv pip install cupy-cuda12x
 ```
