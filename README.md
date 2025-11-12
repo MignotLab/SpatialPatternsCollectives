@@ -3,13 +3,23 @@
 This repository provides the analysis and simulation codes used in the paper:  
 **"The mechanisms of spatial pattern transition in motile bacterial collectives" (2025)**
 
-All codes are implemented as *pseudo-notebooks*: each code cell can be executed independently (e.g. in VS Code or Spyder using `Ctrl + Enter`).
+All codes are implemented as *pseudo-notebooks*: each code cell can be executed independently using `Ctrl + Enter`.
 
 ---
 
-## 1. Repository structure
+### 1. Clone this repository
 
-All scripts are located in the `scripts/` folder, including the subdirectories used for specific analyses or simulations.
+You can clone this public repository using:
+
+```bash
+git clone https://github.com/MignotLab/SpatialPatternsCollectives.git
+```
+
+---
+
+## 2. Repository structure
+
+All scripts are located in the `scripts/` folder.
 
 ### Main analysis scripts
 
@@ -37,16 +47,16 @@ All scripts are located in the `scripts/` folder, including the subdirectories u
 
 ### Subdirectories within `scripts/`
 
-- **`scripts/analysis_reversals_detection_SgmX/`**  
+- **`analysis_reversals_detection_SgmX/`**  
   Supplementary analyses corresponding to Section 2.2 of the Supplementary Information.
 
-- **`scripts/simu_2d/`**  
+- **`simu_2d/`**  
   Codes for 2D agent-based simulations of swarming and rippling patterns.  
   The main script `agent_based_simulation_script_paper_2024.py` was used for Figures 5–7.
 
 ---
 
-## 2. Environment installation
+## 3. Environment installation
 
 All analyses and simulations can be executed within a single Python environment.  
 The easiest setup method uses [`uv`](https://github.com/astral-sh/uv), a modern, fast Python package manager fully compatible with `pip`.
