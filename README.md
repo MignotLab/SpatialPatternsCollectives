@@ -24,17 +24,17 @@ All scripts are located in the `scripts/` folder.
 ### Main analysis scripts
 
 - **`nematic_analysis.py`**  
-  Extracts the *nematic order* from phase-contrast or fluorescence movies by dividing each frame into a grid.  
+  Extracts the *nematic order* from phase-contrast or fluorescence movies by dividing each frame into a grid.
   Computes spatial correlations of nematic alignment and plots nematic order as a function of distance *r*.  
   *Used in Figures 1c, 5b, and Supplementary Figure S2c.*
 
 - **`reversal_and_signaling_analysis.py`**  
-  Detects reversal events from tracked bacteria (CSV format) and computes signaling-related quantities:  
+  Detects reversal events from tracked bacteria (CSV format) and computes signaling-related quantities:
   `reversals`, `cumul_frustration`, `n_neighbours`, and `n_neg_neighbours`.  
   *Used in Figures 1e, 1f, 3b–e.*
 
 - **`tracking_analysis.py`**  
-  Performs segmentation, skeletonization, and tracking of rod-shaped bacteria (e.g. *Myxococcus xanthus*).  
+  Performs segmentation, skeletonization, and tracking of rod-shaped bacteria (e.g. *Myxococcus xanthus*).
   Generates tracking CSVs for input to `reversal_and_signaling_analysis.py`.  
   Includes optional Napari visualization.
 
