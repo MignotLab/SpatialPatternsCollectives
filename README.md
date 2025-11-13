@@ -48,7 +48,6 @@ All scripts are located in the `scripts/` folder.
   `simulation_1d_cpu.py` runs on any machine (CPU only).  
   `simulation_1d_cupy.py` enables GPU acceleration using CuPy (see below).  
   *Used in Figure 2c.*  
-  (Figure 2d was generated from `simulation/pde_model/linearisation/guzzo_model/main.py`.)
 
 ### Subdirectories within `scripts/`
 
@@ -61,7 +60,7 @@ All scripts are located in the `scripts/` folder.
 
 ### Additional scripts (linear stability analysis)
 
-Some scripts related to the linear stability analysis (used for Fig. 2d and Supplementary Text)  
+Some scripts related to the linear stability analysis (used for Figure 2d and Supplementary Text)  
 are located outside the `scripts/` folder:
 
 - `simulation/pde_model/linearisation/guzzo_model/main.py`  
