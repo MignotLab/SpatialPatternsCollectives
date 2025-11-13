@@ -1,7 +1,12 @@
 # The mechanisms of spatial pattern transition in motile bacterial collectives
 
-This repository provides the analysis and simulation codes used in the paper:  
-**"The mechanisms of spatial pattern transition in motile bacterial collectives" (2025)**
+This repository provides the **Python 3** analysis and simulation codes used in the paper:  
+**"The mechanisms of spatial pattern transition in motile bacterial collectives" (2025)**  
+Saulnier *et al.*, 2025.
+
+## Authors
+Jean-Baptiste Saulnier, Michèle Romanos, Jonathan Schrohe, Clémence Cuzin,  
+Vincent Calvez*, Tâm Mignot* (*corresponding authors*)
 
 All codes are implemented as *pseudo-notebooks*: each code cell can be executed independently using `Ctrl + Enter`.
 
