@@ -64,7 +64,7 @@ All scripts are located in the `scripts/` folder.
 ## 3. Environment installation
 
 All analyses and simulations can be executed within a single Python environment.  
-The easiest setup method uses [`uv`](https://github.com/astral-sh/uv), a modern, fast Python package manager fully compatible with `pip`.
+The easiest setup method uses [`uv`](https://github.com/astral-sh/uv), a fast Python package manager fully compatible with `pip`.
 
 ### Installation using `uv` (recommended)
 ```bash
