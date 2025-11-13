@@ -57,7 +57,7 @@ All scripts are located in the `scripts/` folder.
 
 - **`simu_2d/`**  
   Codes for 2D agent-based simulations of swarming and rippling patterns.  
-  The main script `agent_based_simulation_script_paper_2024.py` was used for Figures 5–7.
+  The main script `agent_based_simulation_script.py` was used for Figures 5–7.
 
 ---
 
