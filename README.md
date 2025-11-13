@@ -59,6 +59,14 @@ All scripts are located in the `scripts/` folder.
   Codes for 2D agent-based simulations of swarming and rippling patterns.  
   The main script `agent_based_simulation_script.py` was used for Figures 5–7.
 
+### Additional scripts (linear stability analysis)
+
+Some scripts related to the linear stability analysis (used for Fig. 2d and Supplementary Text)  
+are located outside the `scripts/` folder:
+
+- `simulation/pde_model/linearisation/guzzo_model/main.py`  
+- `simulation/pde_model/linearisation/igoshin_model/main.py`
+
 ---
 
 ## 3. Environment installation
