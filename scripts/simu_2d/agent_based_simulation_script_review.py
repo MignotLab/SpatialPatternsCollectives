@@ -9,12 +9,6 @@ from simulation.agent_based_model_myxo.main import Main
 from simulation.agent_based_model_myxo.parameters import Parameters
 
 """
-'reversal_type could be: (refractory_period_type, reversal_rate_type), "threshold_frustration", "periodic" or "off"; default is ("linear", "bilinear")
-
-'reversal_rate_type could be: "bilinear", "bilinear_smooth", "linear", "sigmoidal", "exponential" or "constant"; default is "bilinear"
-
-'refractory_period_type could be: "linear", "sigmoidal" or "constant"; default is "linear"
-
 # EXAMPLE SWARMING
 {   'generation_type':"square_random_orientation", 'n_bact':300, 'space_size':65*2,
     
@@ -104,7 +98,7 @@ params_list = [
      'epsilon_eps':3
     },
 
-    # ## REVIEWER 4 (now in script agent_based_simulation_script_review_paper_2024_signaling_test.py)
+    # ## REVIEWER 4 (now in script agent_based_simulation_script_review_signaling.py)
     # ## QUESTION 2.1 different signalling type (rippling frustration) (launched 3 times to have 3 replicates)
 
     # ## Rippling frustration sample 1
@@ -179,7 +173,7 @@ if __name__ == '__main__':
     # Create and launch one process per simulation
     processes = []
     for i, params in enumerate(params_list):
-        sample = 'output/agent_based_simulation_script_review_paper_2024/sample' + str(i + 1)
+        sample = 'output/agent_based_simulation_script_review/sample' + str(i + 1)
         process = multiprocessing.Process(target=simulate, args=(params, sample))
         processes.append(process)
         process.start()

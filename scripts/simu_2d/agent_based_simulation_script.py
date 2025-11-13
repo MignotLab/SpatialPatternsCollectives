@@ -9,12 +9,6 @@ from simulation.agent_based_model_myxo.main import Main
 from simulation.agent_based_model_myxo.parameters import Parameters
 
 """
-'reversal_type could be: (refractory_period_type, reversal_rate_type), "threshold_frustration", "periodic" or "off"; default is ("linear", "bilinear")
-
-'reversal_rate_type could be: "bilinear", "bilinear_smooth", "linear", "sigmoidal", "exponential" or "constant"; default is "bilinear"
-
-'refractory_period_type could be: "linear", "sigmoidal" or "constant"; default is "linear"
-
 # EXAMPLE SWARMING
 {   'generation_type':"square_random_orientation", 'n_bact':300, 'space_size':65,
     
@@ -44,7 +38,7 @@ from simulation.agent_based_model_myxo.parameters import Parameters
 # Number of cell in swarming 100X field of the paper : 3305
 
 T = 500 # minutes
-# Liste des ensembles de paramètres pour chaque simulation
+# List of parameter sets for each simulation
 params_list = [
     ## RIPPLING AND SWARMING 0.5 times more bact in rippling 1
     {'generation_type':"rippling_swarming_transition", 'n_bact':(1000+2000)*18, 'percentage_bacteria_rippling':0.333, 'space_size':65*6, 'plot_rippling_swarming_color':True,'param_point_size':0.25,
@@ -334,84 +328,11 @@ params_list = [
      'save_frequency_csv':10,
     },
 
-
-
-    # ## RIPPLING FOR FRUSTRATION 41
-    # {'generation_type':"square_alignment", 'n_bact':1000, 'space_size':65, 'save_frequency_csv':2/60, 'param_point_size':2,
-    #  'alignment_type':"global_alignment",
-    #  'eps_follower_type':"no_eps",
-    # },
-    # ## RIPPLING FOR FRUSTRATION 42
-    # {'generation_type':"square_alignment", 'n_bact':1000, 'space_size':65, 'save_frequency_csv':2/60, 'param_point_size':2,
-    #  'alignment_type':"global_alignment",
-    #  'eps_follower_type':"no_eps",
-    # },
-    # ## RIPPLING FOR FRUSTRATION 43
-    # {'generation_type':"square_alignment", 'n_bact':1000, 'space_size':65, 'save_frequency_csv':2/60, 'param_point_size':2,
-    #  'alignment_type':"global_alignment",
-    #  'eps_follower_type':"no_eps",
-    # },
-
-
-
-    # ## SWARMING FOR FRUSTRATION 44
-    # {'generation_type':"square_random_orientation", 'n_bact':370, 'space_size':65, 'save_frequency_csv':2/60, 'param_point_size':2,
-    #  'alignment_type':"no_alignment",
-    #  'eps_follower_type':"igoshin_eps_road_follower",
-    # },
-    # ## SWARMING FOR FRUSTRATION 45
-    # {'generation_type':"square_random_orientation", 'n_bact':370, 'space_size':65, 'save_frequency_csv':2/60, 'param_point_size':2,
-    #  'alignment_type':"no_alignment",
-    #  'eps_follower_type':"igoshin_eps_road_follower",
-    # },
-    # ## SWARMING FOR FRUSTRATION 46
-    # {'generation_type':"square_random_orientation", 'n_bact':370, 'space_size':65, 'save_frequency_csv':2/60, 'param_point_size':2,
-    #  'alignment_type':"no_alignment",
-    #  'eps_follower_type':"igoshin_eps_road_follower",
-    # },
-
-
-    # ## RIPPLING CONTROL 1
-    # {'generation_type':"square_alignment", 'n_bact':1000, 'space_size':65, 'save_frequency_csv':2, 'param_point_size':2,
-    #  'alignment_type':"global_alignment",
-    #  'eps_follower_type':"no_eps",
-    # },
-
-    # ## RIPPLING CONTROL 2
-    # {'generation_type':"square_alignment", 'n_bact':1000, 'space_size':65, 'save_frequency_csv':2, 'param_point_size':2,
-    #  'alignment_type':"global_alignment",
-    #  'eps_follower_type':"no_eps",
-    # },
-
-    # ## RIPPLING CONTROL 3
-    # {'generation_type':"square_alignment", 'n_bact':1000, 'space_size':65, 'save_frequency_csv':2, 'param_point_size':2,
-    #  'alignment_type':"global_alignment",
-    #  'eps_follower_type':"no_eps",
-    # },
-
-    # ## SWARMING CONTROL 4
-    # {'generation_type':"square_random_orientation", 'n_bact':370, 'space_size':65, 'save_frequency_csv':2, 'param_point_size':2,
-    #  'alignment_type':"no_alignment",
-    #  'eps_follower_type':"igoshin_eps_road_follower",
-    # },
-
-    # ## SWARMING CONTROL 5
-    # {'generation_type':"square_random_orientation", 'n_bact':370, 'space_size':65, 'save_frequency_csv':2, 'param_point_size':2,
-    #  'alignment_type':"no_alignment",
-    #  'eps_follower_type':"igoshin_eps_road_follower",
-    # },
-
-    # ## SWARMING CONTROL 6
-    # {'generation_type':"square_random_orientation", 'n_bact':370, 'space_size':65, 'save_frequency_csv':2, 'param_point_size':2,
-    #  'alignment_type':"no_alignment",
-    #  'eps_follower_type':"igoshin_eps_road_follower",
-    # },
-
-    # Ajoutez d'autres ensembles de paramètres selon vos besoins
+    # Add other parameter sets as needed
 ]
 
 
-# Function executed in each simulation process
+# Function for each simulation
 def simulate(params, sample):
     # Generate a unique seed using system entropy (guaranteed to differ between processes)
     seed = int.from_bytes(os.urandom(4), byteorder="little")
@@ -434,7 +355,7 @@ if __name__ == '__main__':
     # Create and launch one process per simulation
     processes = []
     for i, params in enumerate(params_list):
-        sample = 'output/agent_based_simulation_script_paper_2024/sample' + str(i + 1)
+        sample = 'output/agent_based_simulation_script/sample' + str(i + 1)
         process = multiprocessing.Process(target=simulate, args=(params, sample))
         processes.append(process)
         process.start()
