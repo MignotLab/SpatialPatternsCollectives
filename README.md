@@ -83,3 +83,9 @@ Some simulations (e.g., `simulation_1d_cupy.py`) use GPU acceleration through **
 ``` bash
 uv pip install cupy-cuda12x
 ```
+
+---
+
+## License
+
+This project is licensed under the MIT License — see the `LICENSE` file for details.
