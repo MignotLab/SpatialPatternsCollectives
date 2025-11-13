@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+type: software
+title: "The mechanisms of spatial pattern transition in motile bacterial collectives – analysis and simulation code"
+authors:
+  - family-names: "Saulnier"
+    given-names: "Jean-Baptiste"
+  - family-names: "Romanos"
+    given-names: "Michèle"
+  - family-names: "Schrohe"
+    given-names: "Jonathan"
+  - family-names: "Cuzin"
+    given-names: "Clémence"
+  - family-names: "Calvez"
+    given-names: "Vincent"
+  - family-names: "Mignot"
+    given-names: "Tâm"
+version: "1.0.0"
+date-released: "2025-01-01"
+repository-code: "https://github.com/MignotLab/SpatialPatternsCollectives"
