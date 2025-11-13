@@ -8,7 +8,7 @@ Saulnier *et al.*, 2025.
 Jean-Baptiste Saulnier, Michèle Romanos, Jonathan Schrohe, Clémence Cuzin,  
 Vincent Calvez*, Tâm Mignot* (*corresponding authors*)
 
-All codes are implemented as *pseudo-notebooks*: each code cell can be executed independently using `Ctrl + Enter`.
+All codes are implemented as *pseudo-notebooks*, where code cells can be executed sequentially using `Ctrl + Enter`.
 
 ---
 
